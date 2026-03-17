@@ -6,10 +6,12 @@ import { usePathname } from "next/navigation";
 import {
   ChevronDown,
   Home,
-  Hammer,
-  Settings,
+  Mail,
   Users,
-  CreditCard,
+  FileText,
+  BarChart3,
+  Calendar,
+  Settings,
 } from "lucide-react";
 import {
   Collapsible,
@@ -26,13 +28,34 @@ type NavItem = {
 
 const sections: { title: string; items: NavItem[] }[] = [
   {
-    title: "Platform",
+    title: "MailForge",
     items: [
-      { label: "Overview", href: "/dashboard", icon: Home },
+      { label: "Dashboard", href: "/dashboard", icon: Home },
       {
-        label: "Feature",
-        href: "/dashboard/feature",
-        icon: Hammer,
+        label: "Campaigns",
+        href: "/dashboard/campaigns",
+        icon: Mail,
+      },
+      {
+        label: "Templates",
+        href: "/dashboard/templates",
+        icon: FileText,
+      },
+      {
+        label: "Contacts",
+        href: "/dashboard/contacts",
+        icon: Users,
+      },
+      {
+        label: "Analytics",
+        href: "/dashboard/analytics",
+        icon: BarChart3,
+      },
+      {
+        label: "Schedules",
+        href: "/dashboard/schedules",
+        icon: Calendar,
+        disabled: true,
       },
     ],
   },
@@ -40,7 +63,6 @@ const sections: { title: string; items: NavItem[] }[] = [
     title: "Account",
     items: [
       { label: "Team", href: "/dashboard/team", icon: Users },
-      { label: "Billing", href: "#", icon: CreditCard, disabled: true },
       { label: "Settings", href: "/dashboard/settings", icon: Settings },
     ],
   },
