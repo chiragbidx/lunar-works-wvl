@@ -1,9 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { ChevronsDownIcon } from "lucide-react";
 import Link from "next/link";
-import { getHomeContent } from "@/content/home";
-
-const { footer } = getHomeContent();
 
 export const LayoutFooterSection = () => {
   return (
@@ -11,39 +8,47 @@ export const LayoutFooterSection = () => {
       <div className="p-10 bg-card border border-secondary rounded-2xl">
         <div className="grid grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-x-12 gap-y-8">
           <div className="col-span-full xl:col-span-2">
-            <Link href="#" className="flex font-bold items-center">
+            <Link href="/" className="flex font-bold items-center">
               <ChevronsDownIcon className="w-9 h-9 mr-2 bg-gradient-to-tr from-primary via-primary/70 to-primary rounded-lg border border-secondary" />
-
-              <h3 className="text-2xl">{footer.brandName}</h3>
+              <h3 className="text-2xl">MailForge</h3>
             </Link>
+            <p className="mt-2 opacity-70 text-sm">
+              Powerful Email Marketing Made Easy.<br />
+              Copyright © {new Date().getFullYear()} Chirag Dodiya. All rights reserved.
+            </p>
           </div>
-
-          {footer.columns.map((column) => (
-            <div key={column.heading} className="flex flex-col gap-2">
-              <h3 className="font-bold text-lg">{column.heading}</h3>
-              {column.links.map((link) => (
-                <div key={link.label}>
-                  <Link href={link.href} className="opacity-60 hover:opacity-100">
-                    {link.label}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          ))}
+          <div className="flex flex-col gap-2">
+            <h3 className="font-bold text-lg">Product</h3>
+            <Link href="#features" className="opacity-60 hover:opacity-100">Features</Link>
+            <Link href="#pricing" className="opacity-60 hover:opacity-100">Pricing</Link>
+            <Link href="#faq" className="opacity-60 hover:opacity-100">FAQs</Link>
+          </div>
+          <div className="flex flex-col gap-2">
+            <h3 className="font-bold text-lg">Company</h3>
+            <Link href="/about" className="opacity-60 hover:opacity-100">About</Link>
+            <Link href="/privacy" className="opacity-60 hover:opacity-100">Privacy</Link>
+            <Link href="/terms" className="opacity-60 hover:opacity-100">Terms</Link>
+          </div>
+          <div className="flex flex-col gap-2 col-span-2 md:col-span-1">
+            <h3 className="font-bold text-lg">Resources</h3>
+            <Link href="/blog" className="opacity-60 hover:opacity-100">Blog</Link>
+            <Link href="/guides" className="opacity-60 hover:opacity-100">Guides</Link>
+            <Link href="/support" className="opacity-60 hover:opacity-100">Help Center</Link>
+          </div>
+          <div className="flex flex-col gap-2 col-span-2 md:col-span-1">
+            <h3 className="font-bold text-lg">Contact</h3>
+            <a
+              href="mailto:hi@chirag.co"
+              className="opacity-60 hover:opacity-100"
+            >hi@chirag.co</a>
+            <Link href="/contact" className="opacity-60 hover:opacity-100">Contact Form</Link>
+          </div>
         </div>
-
         <Separator className="my-6" />
-        <section className="">
-          <h3 className="">
-            {footer.copyright}
-            <Link
-              target="_blank"
-              href={footer.attribution.href}
-              className="text-primary transition-all border-primary hover:border-b-2 ml-1"
-            >
-              {footer.attribution.label}
-            </Link>
-          </h3>
+        <section>
+          <span className="opacity-70 text-xs">
+            Made with ♥ by MailForge • Powered by Next.js & React
+          </span>
         </section>
       </div>
     </footer>
