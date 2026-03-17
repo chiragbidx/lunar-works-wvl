@@ -30,12 +30,9 @@ export default async function Home() {
   const hide = new Set(whitelist ? envHide : [...defaultHide, ...envHide]);
   const sections = [
     ["layout-hero", <LayoutHeroSection key="layout-hero" />],
-    ["layout-sponsors", <LayoutSponsorsSection key="layout-sponsors" />],
-    ["layout-benefits", <LayoutBenefitsSection key="layout-benefits" />],
+    ["how-it-works", <LayoutServicesSection key="how-it-works" />],
     ["layout-features", <LayoutFeatureGridSection key="layout-features" />],
-    ["layout-services", <LayoutServicesSection key="layout-services" />],
     ["layout-testimonials", <LayoutTestimonialSection key="layout-testimonials" />],
-    ["layout-team", <LayoutTeamSection key="layout-team" />],
     ["layout-pricing", <LayoutPricingSection key="layout-pricing" />],
     ["layout-contact", <LayoutContactSection key="layout-contact" />],
     ["layout-faq", <LayoutFaqSection key="layout-faq" />],
